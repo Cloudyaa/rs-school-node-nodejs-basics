@@ -2,7 +2,7 @@ import {writeFile, readFile} from 'node:fs/promises';
 import {join} from 'path';
 
 const create = async () => {
-  const filePath = join('files','fresh.txt');
+  const filePath = join('src/fs/files','fresh.txt');
   let isCreated = false;
   try {
     await readFile(filePath);
