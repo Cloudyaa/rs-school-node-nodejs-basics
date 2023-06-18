@@ -1,14 +1,10 @@
-import {dirname, join} from "path";
+import {join} from "path";
 import fs, {readFile} from "node:fs/promises";
-import {fileURLToPath} from "url";
+import {filesDirPath} from "./filesDirPath.js";
 
 const rename = async () => {
-
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = join(dirname(__filename), 'files');
-
-  const wrongFilePath = join(__dirname,'wrongFilename.txt');
-  const properFilename = join(__dirname,'properFilename.md');
+  const wrongFilePath = join(filesDirPath,'wrongFilename.txt');
+  const properFilename = join(filesDirPath,'properFilename.md');
   let properExists = false;
 
   // check if wrongFile exists

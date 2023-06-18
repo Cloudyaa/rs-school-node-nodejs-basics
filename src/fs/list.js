@@ -1,13 +1,8 @@
-import {fileURLToPath} from "url";
-import {dirname, join, parse} from "path";
+import {parse} from "path";
 import {readdir} from "node:fs/promises";
+import {filesDirPath} from "./filesDirPath.js";
 
 const list = async () => {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = dirname(__filename);
-
-  const filesDirPath = join(__dirname, 'files');
-
   try {
     const files = await readdir(filesDirPath);
     for (const file of files) {

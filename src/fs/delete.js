@@ -1,12 +1,9 @@
-import {dirname, join} from "path";
+import {join} from "path";
 import {readFile, unlink} from "node:fs/promises";
-import {fileURLToPath} from "url";
+import {filesDirPath} from "./filesDirPath.js";
 
 const remove = async () => {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = dirname(__filename);
-
-  const filePath = join(__dirname, 'files','fileToRemove.txt');
+  const filePath = join(filesDirPath,'fileToRemove.txt');
 
   try {
     await readFile(filePath);

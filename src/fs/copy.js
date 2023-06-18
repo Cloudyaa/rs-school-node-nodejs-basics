@@ -2,13 +2,13 @@
 import {copyFile, mkdir, readdir} from 'node:fs/promises';
 import {join, dirname} from 'path';
 import { fileURLToPath } from 'url';
+import {filesDirPath} from "./filesDirPath.js";
 
 const copy = async () => {
 
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
 
-    const filesDirPath = join(__dirname, 'files');
     const filesCopyDirPath = join(__dirname, 'files_copy')
 
     let copyExists = false;

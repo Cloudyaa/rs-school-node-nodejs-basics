@@ -1,13 +1,11 @@
 import {writeFile, readFile} from 'node:fs/promises';
-import {dirname, join} from 'path';
-import {fileURLToPath} from "url";
+import {join} from 'path';
+import {filesDirPath} from "./filesDirPath.js";
 
 const create = async () => {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = dirname(__filename);
-
-  const filePath = join(__dirname,'files','fresh.txt');
+  const filePath = join(filesDirPath,'fresh.txt');
   let isCreated = false;
+
   try {
     await readFile(filePath);
     isCreated = true;
