@@ -1,3 +1,3 @@
-# Node.js basics
+# Node.js basics tasks
 
-## !!! Please don't submit Pull Requests to this repository !!!
+Task was to implement necessary functionality in several folders to learn Node.js basics
